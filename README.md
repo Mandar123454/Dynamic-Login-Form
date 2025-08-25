@@ -29,9 +29,9 @@ A fully dynamic, responsive login form built with pure JavaScript and CSS. The f
 Below are some example screenshots of the dynamic login form and its validation states:
 
 <p align="center">
-	<img src="Screenshots/login-form.png" alt="Login Form" width="350" />
-	<img src="Screenshots/data-filling.png" alt="Data Filling" width="350" />
-	<img src="Screenshots/result.png" alt="Result" width="350" />
+	<img src="Login Form.png" alt="Login Form" width="350" />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img src="Data Filling.png" alt="Data Filling" width="350" /><br><br><br>
+	<img src="Result.png" alt="Result" width="350" />
 </p>
 
 
