@@ -37,7 +37,7 @@ User interacts → JavaScript validates inputs → errors displayed or data is a
 - `style.css`: CSS file for styling and responsiveness.
 
 ## Screenshots
-Screenshots of the form and validation states are available in the `Screenshots/` folder.
+Screenshots of the form and validation states are available.
 
 ---
 Feel free to expand this documentation as you add new features or make improvements!
