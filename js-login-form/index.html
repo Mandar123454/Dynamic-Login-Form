@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Login Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    
+    const root = document.getElementById('root');
+
+// Create form container
+const formContainer = document.createElement('div');
+formContainer.className = 'form-container';
+
+// Add heading
+const heading = document.createElement('h2');
+heading.textContent = 'Login';
+formContainer.appendChild(heading);
+
+// Email Label and Input
+const emailLabel = document.createElement('label');
+emailLabel.textContent = 'Email';
+emailLabel.className = 'form-label';
+formContainer.appendChild(emailLabel);
+
+const emailInput = document.createElement('input');
+emailInput.type = 'email';
+emailInput.placeholder = 'Enter your email';
+emailInput.className = 'form-input';
+formContainer.appendChild(emailInput);
+
+// Password Label and Input
+const passwordLabel = document.createElement('label');
+passwordLabel.textContent = 'Password';
+passwordLabel.className = 'form-label';
+formContainer.appendChild(passwordLabel);
+
+const passwordInput = document.createElement('input');
+passwordInput.type = 'password';
+passwordInput.placeholder = 'Enter your password';
+passwordInput.className = 'form-input';
+formContainer.appendChild(passwordInput);
+
+// Error Message
+const errorMsg = document.createElement('div');
+errorMsg.className = 'error-message';
+formContainer.appendChild(errorMsg);
+
+// Login Button
+const loginBtn = document.createElement('button');
+loginBtn.type = 'button';
+loginBtn.textContent = 'Login';
+loginBtn.className = 'form-button';
+formContainer.appendChild(loginBtn);
+
+// Event Listener
+loginBtn.addEventListener('click', function() {
+  // Reset styles and error
+  emailInput.classList.remove('error');
+  passwordInput.classList.remove('error');
+  errorMsg.textContent = '';
+  
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  let errors = [];
+
+  if (!email) {
+    errors.push('Email required.');
+    emailInput.classList.add('error');
+  }
+  if (!password) {
+    errors.push('Password required.');
+    passwordInput.classList.add('error');
+  }
+  // Simple email format validation
+  if (email && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+    errors.push('Invalid email format.');
+    emailInput.classList.add('error');
+  }
+  if (password && password.length < 6) {
+    errors.push('Password must be at least 6 characters.');
+    passwordInput.classList.add('error');
+  }
+  if (errors.length > 0) {
+    errorMsg.textContent = errors.join(' ');
+    return;
+  }
+  // Success
+  alert(`Email: ${email}\nPassword: ${password}`);
+});
+
+root.appendChild(formContainer);
+
+  </script>
+</body>
+</html>
